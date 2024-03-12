@@ -71,8 +71,29 @@ class _GalleryImageViewWrapperState extends State<GalleryImageViewWrapper> {
     return Scaffold(
       appBar: widget.showAppBar
           ? AppBar(
-              title: Text(widget.titleGallery ?? "Gallery"),
-            )
+        automaticallyImplyLeading: false,
+        title:
+        Row(
+          children: [
+            SizedBox(width: 10,),
+            InkWell(
+              child: Icon(Icons.arrow_back_ios_new_outlined,color: Colors.white,),
+              onTap: (){
+                Navigator.pop(context);
+              },
+            ),
+            SizedBox(width: 15,),
+            Text(
+              widget.titleGallery??"Swad Gallery",
+              style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 20
+              ),
+            ),
+          ],
+        ),
+        backgroundColor: Color(0xFFDC902E),
+      )
           : null,
       backgroundColor: widget.backgroundColor,
       body: SafeArea(
