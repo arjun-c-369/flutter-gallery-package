@@ -30,8 +30,8 @@ class AppCachedNetworkImage extends StatelessWidget {
         child: PhotoView(
           imageProvider: CachedNetworkImageProvider(
             imageUrl,
-            maxHeight: height.toInt(),
-            maxWidth: width.toInt(),
+            maxHeight: height?.toInt(),
+            maxWidth: width?.toInt(),
           ),
         )
         /*
